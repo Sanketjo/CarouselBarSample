@@ -139,12 +139,12 @@ namespace CarouselBarSample
             OnSelectedIndexChanged(0, 0);
         }
 
-        protected override SizeRequest OnSizeRequest(double widthConstraint, double heightConstraint)
+        protected override SizeRequest OnMeasure(double widthConstraint, double heightConstraint)
         {
             _stack.WidthRequest = widthConstraint + 10; //Extra space to enable scrolling
             _stack.Padding = new Thickness(20, 0, 0, 0);
 
-            return base.OnSizeRequest(widthConstraint, heightConstraint);
+            return base.OnMeasure(widthConstraint, heightConstraint);
         }
 
         private void OnSelectedIndexChanged(object oldValue, object newValue)
