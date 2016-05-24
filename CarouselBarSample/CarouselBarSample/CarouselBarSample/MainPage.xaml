@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Name="Page"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CarouselBarSample;assembly=CarouselBarSample"
+             x:Class="CarouselBarSample.MainPage">
+    <ContentPage.Resources>
+      <ResourceDictionary>
+        <local:EmptyConverter x:Key="EmptyConverter"/>
+      </ResourceDictionary>
+    </ContentPage.Resources>
+
+  <local:CarouselBar HeightRequest="50"
+                     SelectedIndex="{Binding SelectedIndex, Mode=TwoWay}"
+                     SelectedTextColor="Red"
+                     UnselectedTextColor="Black"
+                     HorizontalOptions="Center"
+                     VerticalOptions="Center">
+    <local:CarouselBar.Buttons>
+      <local:CarouselButton Title="AllohaAlloha"
+                            SelectionCommand="{Binding SomeCommand, Source={x:Reference Page}}"/>
+      <local:CarouselButton Title="Olaolaolaolaolaola"
+                            SelectionCommand="{Binding SomeCommand, Source={x:Reference Page}}"/>
+      <local:CarouselButton Title="BibibW"
+                            SelectionCommand="{Binding SomeCommand, Source={x:Reference Page}}"/>
+    </local:CarouselBar.Buttons>
+  </local:CarouselBar>
+</ContentPage>
