@@ -17,11 +17,17 @@
                      HorizontalOptions="Center"
                      VerticalOptions="Center">
     <local:CarouselBar.Buttons>
-      <local:CarouselButton Title="AllohaAlloha"
+      <local:CarouselButton Title="Alloha"
                             SelectionCommand="{Binding SomeCommand, Source={x:Reference Page}}"/>
-      <local:CarouselButton Title="Olaolaolaolaolaola"
+      <local:CarouselButton Title="Olaolao"
                             SelectionCommand="{Binding SomeCommand, Source={x:Reference Page}}"/>
       <local:CarouselButton Title="BibibW"
+                            SelectionCommand="{Binding SomeCommand, Source={x:Reference Page}}"/>
+      <local:CarouselButton Title="ggggggg"
+                            SelectionCommand="{Binding SomeCommand, Source={x:Reference Page}}"/>
+      <local:CarouselButton Title="uiuiuiuiui"
+                            SelectionCommand="{Binding SomeCommand, Source={x:Reference Page}}"/>
+      <local:CarouselButton Title="exexexexe"
                             SelectionCommand="{Binding SomeCommand, Source={x:Reference Page}}"/>
     </local:CarouselBar.Buttons>
   </local:CarouselBar>

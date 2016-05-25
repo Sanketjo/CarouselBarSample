@@ -77,6 +77,9 @@ namespace CarouselBarSample.iOS
         {
             var carousel = (CarouselBar)Element;
 
+            if (!carousel.IsScrollEnable)
+                return;
+
             var offset = 0d;
             for (int i = 0; i < carousel.SelectedIndex; i++)
             {

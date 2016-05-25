@@ -72,6 +72,8 @@ namespace CarouselBarSample
                                         ((CarouselBar)bindable).OnSelectedIndexChanged(oldValue, newValue);
                                     });
 
+        public bool IsScrollEnable { get; private set; }
+
         #region bindable properties
         public Color SelectedTextColor
         {
@@ -98,8 +100,10 @@ namespace CarouselBarSample
 
             _stack = new StackLayout
             {
+                VerticalOptions = new LayoutOptions(LayoutAlignment.Center, false),
                 Orientation = StackOrientation.Horizontal,
-                Spacing = 10
+                Spacing = 10,
+                Padding = new Thickness(20, 0, 0, 0)
             };
 
             Content = _stack;
@@ -139,12 +143,13 @@ namespace CarouselBarSample
             OnSelectedIndexChanged(0, 0);
         }
 
-        protected override SizeRequest OnSizeRequest(double widthConstraint, double heightConstraint)
+        protected override SizeRequest OnMeasure(double widthConstraint, double heightConstraint)
         {
-            _stack.WidthRequest = widthConstraint + 10; //Extra space to enable scrolling
-            _stack.Padding = new Thickness(20, 0, 0, 0);
+            var size = _stack.Measure(widthConstraint, heightConstraint, MeasureFlags.None);
 
-            return base.OnSizeRequest(widthConstraint, heightConstraint);
+            IsScrollEnable = size.Request.Width > widthConstraint;
+
+            return base.OnMeasure(widthConstraint, heightConstraint);
         }
 
         private void OnSelectedIndexChanged(object oldValue, object newValue)
